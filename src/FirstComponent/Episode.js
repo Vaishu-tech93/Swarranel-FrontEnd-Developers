@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import img from '../secondComponent/bg-1.jpg';
-import verticalBanner from '../secondComponent/Vertical-Banner.jpg';
-import horizontalBanner from '../secondComponent/Horizontal-Banner-1536x480.jpg';
-
+import img from '../FirstComponent/bg-1.jpg';
+import verticalBanner from '../FirstComponent/Vertical-Banner.jpg';
+import horizontalBanner from '../FirstComponent/Horizontal-Banner-1536x480.jpg';
 function Episode() {
   return (
    <>
@@ -25,8 +24,7 @@ function Episode() {
    </div>
    <button type="button" class="w-44 text-white bg-pink-700 hover:bg-pink-600 focus:outline-none focus:ring-4 focus:ring-pink-300 font-medium text-sm px-5 py-2.5 text-center mb-10 mt-10 dark:bg-pink-600 dark:hover:bg-pink-500 dark:focus:ring-pink-700 mb-10 ml-44 ">Pick your (seat)</button>
 
-   {/* <div> */}
-   <div style={{backgroundImage :`URL(${img})`}} className='h-5/6 '>
+    <div style={{backgroundImage :`URL(${img})`}} className='h-5/6 '>
    <h1 class="text-5xl ml-20 font-black text-black-900 dark:text-white">About the Event</h1>
    <p class=" ml-10 mt-10 text-black-500 dark:text-black-400 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-black-900 dark:first-letter:text-black-100 first-letter:me-3 first-letter:float-start">A musical journey of the golden era of Bollywood….the 90’s….where all of us witnessed a complete change-over of the music in the industry. Let’s get nostalgic yet again as we bring to you some select duets performed by the likes of Udit Narayan, Kumar Sanu, Alka Ragnik, Kavita Krishnamurthy and many more iconic singers of this musical era… with LIVE SAXOPHONE. Book your tickets now and get ready to be swept away by the melodies that have stood the test of time!</p>
    </div>
@@ -61,13 +59,8 @@ function Episode() {
         <img src="/Sonale-Sathe-Vocalist.png" class="h-44 w-44 ml-28"></img>
         <h5 class=" pt-5 ml-36 text-black-500 dark:text-black-400  text-4xl font-black text-black-900 dark:text-white  ">Sonale Sathe</h5>
         </div>
-    </div>
-   
-    </div>
-
-
-
-    
+    </div>   
+    </div>    
     </div>
     <div>
 <h1 class="pt-20 ml-20 text-black-500 dark:text-black-400  text-4xl font-black text-black-900 dark:text-white">Venue</h1>

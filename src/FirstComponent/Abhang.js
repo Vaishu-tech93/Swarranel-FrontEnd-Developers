@@ -1,7 +1,5 @@
 import React from 'react'
-// import { Link } from 'react-router-dom';
-import img from '../secondComponent/black-image.jpg';
-// import img from '../secondComponent/bg-1.jpg';
+import img from '../FirstComponent/black-image.jpg';
 function Abhang() {
   return (
    <>
@@ -58,9 +56,7 @@ function Abhang() {
             Menon</h5>
         </div>
         </div>
-    {/* </div> */}
-   
-    </div>
+       </div>
     </div>
 
     <div>
@@ -81,10 +77,6 @@ function Abhang() {
     
      </div>
 </div>
-
-
-
-
 <div class="ml-5  mt-10">
     <h1 class="text-4xl font-bold text-gray-900 dark:text-white">Terms and Conditions:</h1>
     <div class="ml=10 mt-10">

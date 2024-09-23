@@ -1,7 +1,7 @@
 import React from 'react'
-import img from '../fourthComponent/bg-1.jpg';
+import img from '../FirstComponent/bg-1.jpg';
 import { Link } from 'react-router-dom';
-import Seat from '../fourthComponent/Seat';
+
  function SihayiSe() {
   return (
 
@@ -10,8 +10,7 @@ import Seat from '../fourthComponent/Seat';
       
       <div  class=" w-900 h-900 bg-gray-200 mt-24">
         <img src="Horizontal.jpg" class="flex w-full "></img>
-        {/* <div class="flex bg-gray-200 bt-96 mt-10" > */}
-        <div class="flex">
+            <div class="flex">
         <img src="Horizontal.jpg" class="h-96 w-96 ml-20 hover:scale-110 transition duration-500 cursor-pointer mb-10 mt-10"></img>
         
         <p class=" text-black-900 dark:text-black-900 ml-10 mr-48 mt-10">
@@ -23,7 +22,6 @@ import Seat from '../fourthComponent/Seat';
             <p>Language:
             Hindi</p><br></br>
             </p>
-        {/* </div> */}
         
         </div>
         <button type="button" class="w-44 text-white bg-pink-700 hover:bg-pink-600 focus:outline-none focus:ring-4 focus:ring-pink-300 font-medium text-sm px-5 py-2.5 text-center mb-10 dark:bg-pink-600 dark:hover:bg-pink-500 dark:focus:ring-pink-700 mb-10 ml-20 ">  <Link to="/Seat">Pick your (seat)</Link></button>
