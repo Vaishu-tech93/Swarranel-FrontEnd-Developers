@@ -1,4 +1,3 @@
-
 import React from 'react';
 import img from '../FirstComponent/black-image.jpg';
 
@@ -98,7 +97,7 @@ function Abhang() {
             </p>
             <img
               src="/ramkrishna-more-natyagruha-pimpri-chinchwad-pune.jpg"
-              className="mb-10 pl-20 h-64 md:h-96 mx-auto item-center"
+              className="mb-10 pl- h-64 md:h-96 mx-auto item-center   "
               alt="Ramkrishna More Auditorium"
             />
           </div>
