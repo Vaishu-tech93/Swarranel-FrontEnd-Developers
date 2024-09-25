@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -27,42 +26,22 @@ function Contact() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
       };
     // handle form submission
-      const handleSubmit = async (e) => {
-        e.preventDefault();
-      
-        
-        alert ('form submiited');
-        //axios.post('http://192.168.137.1/api/User', formData);
+    const handleSubmit = async (e) => {
+      e.preventDefault();
     
-        axios.post('http://192.168.1.4/User', formData)
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-  
-  
-    
-        const errors = validate();
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-        setFormErrors(errors);
-        if (Object.keys(errors).length === 0) {
-          try {
-            // Make a POST request to your backend API
-            await axios.post('/api/form', formData);
-            setIsSubmitted(true);
-            setFormData({ name: '', email:'', subject: '', message: '' });
-          } catch (error) {
-            console.error('There was an error submitting the form!', error);
+      try {
+          // Make a POST request to your backend API
+          const response = await axios.post('http://192.168.1.4:5000/User', formData);
+          console.log(response);
+          if(response.status === 200){
+             alert(response.data.message);
           }
-        }
-      };
+        
+          
+      } catch (error) {
+          console.error('There was an error submitting the form!', error);
+      }
+  };
 
   return (
     <>
