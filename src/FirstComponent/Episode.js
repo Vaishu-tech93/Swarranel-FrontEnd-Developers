@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import img from '../FirstComponent/bg-1.jpg';
 import verticalBanner from '../FirstComponent/Vertical-Banner.jpg';
@@ -5,7 +7,7 @@ import horizontalBanner from '../FirstComponent/Horizontal-Banner-1536x480.jpg';
 
 function Episode() {
   return (
-    <>
+    <> 
       {/* Horizontal Banner */}
       <div className="mt-20 pt-4 h-auto">
         <img src={horizontalBanner} alt="Horizontal Banner" className="w-full h-auto" />
@@ -16,9 +18,9 @@ function Episode() {
         <img
           src={verticalBanner}
           alt="Vertical Banner"
-          className="mx-auto md:ml-44 mt-10 md:mt-0 w-72 md:w-96 h-auto"
+          className="mx-auto md:ml-44  md:mt-0 w-72 md:w-96 h-auto"
         />
-        <div className="md:ml-10 ml-0 mr-5 md:mr-48 mt-10 md:mt-0 text-left">
+        <div className="md:ml-10 ml-0 mr-5 md:mr-64 mt-10 md:mt-0 text-left">
           <h1 className="text-2xl md:text-4xl font-black text-black">Nostalgic 90's - Episode 3</h1>
           <p className="mt-4 text-base md:text-lg">Date: SUNDAY, 21ST JAN | Time – 06:00 PM | Ticket rate – Rs 400, 300 & 200</p>
           <p className="mt-2 text-base md:text-lg">Vocals: Nilesh Mate, Jitendra Abhyankar, Swapnaja Lele, Bhagyashree Abhyankar</p>
@@ -44,44 +46,53 @@ function Episode() {
           musical era… with LIVE SAXOPHONE. Book your tickets now and get ready to be swept away by the melodies that
           have stood the test of time!
         </p>
-      {/* </div> */}
+      </div>
 
       {/* Vocalists Section */}
-      <div className="py- px-5 ">
-        <h5 className="text-center text-2xl md:text-4xl font-black text-black">Vocalists</h5>
-        <h2 className="text-center text-gray-500 mt-4 mb-10 text-base md:text-lg">Top Performers of the event</h2>
-        <div className="flex flex-wrap justify-center gap-10">
-          {[
-            { name: 'Nilesh Mate', imgSrc: '/Nilesh-Mate-Vocalist.png' },
-            { name: 'Jitendra Abhyankar', imgSrc: '/Jitendra-Abhyankar.png' },
-            { name: 'Swarada Godbole', imgSrc: '/Swarada-Godbole-Vocalist.png' },
-            { name: 'Kalyani Deshpande', imgSrc: '/Kalyani-Deshpande.png' },
-            { name: 'Sonale Sathe', imgSrc: '/Sonale-Sathe-Vocalist.png' },
-          ].map((vocalist, index) => (
-            <div key={index} className=" m-20">
-              <img src={vocalist.imgSrc} alt={vocalist.name} className="h-32 md:h-44 w-32 md:w-44 mx-auto mb-4" />
-              <h5 className="text-lg md:text-xl font-black text-black">{vocalist.name}</h5>
-            </div>
-          ))}
-        </div>
+      
+      <div className="py- px-5">
+  <h5 className="text-center text-2xl md:text-4xl font-black text-black mt-10">Vocalists</h5>
+  <h2 className="text-center text-gray-500 mt-4 mb-10 text-base md:text-lg">Top Performers of the event</h2>
+  
+  {/* Updated Grid layout for Vocalists */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-center">
+    {[
+      { name: 'Nilesh Mate', imgSrc: '/Nilesh-Mate-Vocalist.png' },
+      { name: 'Jitendra Abhyankar', imgSrc: '/Jitendra-Abhyankar.png' },
+      { name: 'Swarada Godbole', imgSrc: '/Swarada-Godbole-Vocalist.png' },
+      { name: 'Kalyani Deshpande', imgSrc: '/Kalyani-Deshpande.png' },
+      { name: 'Sonale Sathe', imgSrc: '/Sonale-Sathe-Vocalist.png' },
+    ].map((vocalist, index) => (
+      <div key={index} className="m-4">
+        <img src={vocalist.imgSrc} alt={vocalist.name} className="h-32 md:h-44 w-32 md:w-44 mx-auto mb-4" />
+        <h5 className="text-lg md:text-xl font-black text-black text-center">{vocalist.name}</h5>
       </div>
-      </div>
+    ))}
+  </div>
+</div>
+
 
       {/* Venue Section */}
-      <div className="py-10 px-5 md:px-20">
+      <div className="py-10 px-5 md:px-20 mt-20">
         <h1 className="text-2xl md:text-4xl font-black text-black">Venue</h1>
         <p className="text-lg md:text-2xl text-gray-900 pt-10">Auditorium – Elpro City Square</p>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-          <p className="text-gray-500">
-            ELPRO CITY SQUARE is Pune’s latest entertainment and lifestyle destination. Located in the heart of PCMC, it is designed as a mixed-use family destination offering several unique destinations.
-          </p>
-          <p className="text-gray-500">
-            Anchoring the destination is a large outdoor plaza designed to host community events, concerts and celebrations.
-          </p>
-          <p className="text-gray-500">
-            ELPRO CITY SQUARE also features The Auditorium, a 700+ seater unique destination designed for hosting concerts, events, and conferences.
-          </p>
-          <img src="/elpro-city-square-new.webp" className="w-full h-auto" alt="Elpro City Square" />
+          <div className="space-y-6">
+            <p className="text-gray-500">
+              ELPRO CITY SQUARE is Pune’s latest entertainment and lifestyle destination. Located in the heart of PCMC, it is designed as a mixed-use family destination offering several unique destinations.
+            </p>
+            <p className="text-gray-500">
+              Anchoring the destination is a large outdoor plaza designed to host community events, concerts and celebrations.
+            </p>
+            <p className="text-gray-500">
+              ELPRO CITY SQUARE also features The Auditorium, a 700+ seater unique destination designed for hosting concerts, events, and conferences.
+            </p>
+          </div>
+
+          <div className="w-full">
+            <img src="/elpro-city-square-new.webp" className="w-full h-auto object-cover" alt="Elpro City Square" />
+          </div>
         </div>
       </div>
 
