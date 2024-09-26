@@ -14,14 +14,14 @@ function Episode() {
       </div>
 
       {/* Main content with vertical banner and text */}
-      <div className="flex flex-col md:flex-row items-start md:items-center mt-10 md:mt-20 px-5">
+      <div className="flex flex-col md:flex-row items-start  mt-10 md:mt-20 px-5">
         <img
           src={verticalBanner}
           alt="Vertical Banner"
           className="mx-auto md:ml-44  md:mt-0 w-72 md:w-96 h-auto"
         />
-        <div className="md:ml-10 ml-0 mr-5 md:mr-64 mt-10 md:mt-0 text-left">
-          <h1 className="text-2xl md:text-4xl font-black text-black">Nostalgic 90's - Episode 3</h1>
+        <div className="md:ml-20 ml-0 mr-5 md:mr-44 mt-10 md:mt-0 text-left">
+          <h1 className="text-2xl md:text-4xl font-black text-black mt-5">Nostalgic 90's - Episode 3</h1>
           <p className="mt-4 text-base md:text-lg">Date: SUNDAY, 21ST JAN | Time – 06:00 PM | Ticket rate – Rs 400, 300 & 200</p>
           <p className="mt-2 text-base md:text-lg">Vocals: Nilesh Mate, Jitendra Abhyankar, Swapnaja Lele, Bhagyashree Abhyankar</p>
           <p className="mt-2 text-base md:text-lg">Genre: Bollywood</p>
@@ -30,7 +30,7 @@ function Episode() {
       </div>
 
       {/* Ticket button */}
-      <div className="flex justify-center md:justify-start ml-0 md:ml-44">
+      <div className="flex justify-center md:justify-start ml-0 md:ml-64">
         <button className="w-44 text-white bg-pink-700 hover:bg-pink-600 focus:outline-none focus:ring-4 focus:ring-pink-300 font-medium text-sm px-5 py-2.5 text-center mt-10 mb-10">
           Pick your seat
         </button>
