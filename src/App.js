@@ -11,6 +11,7 @@ import Episode from './FirstComponent/Episode';
 import SihayiSe from './FirstComponent/SihayiSe';
 import Footer from './FirstComponent/footer';
 import Abhang from './FirstComponent/Abhang';
+import Seats from './FirstComponent/Seats';
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
       <Route path ="/Episode" element={<Episode/>}/>
 
       <Route path="/Abhang" element={<Abhang/>}/>
+
+      <Route path="/Seats" element={<Seats/>}/>
 
       
     </Routes>
