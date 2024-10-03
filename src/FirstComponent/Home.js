@@ -70,12 +70,14 @@ function Home() {
       alt="Sahir Ludhianvi"
     />
   </div>
+  <Link to="/Seats" >
   <button
     type="button"
     className="ml-60 text-white bg-pink-600 hover:bg-pink-800 focus:ring-4 focus:ring-pink-600 mt-5 md:m-20 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-pink-600 dark:hover:bg-pink-700 focus:outline-none dark:focus:ring-pink-800"
   >
     Book Now
   </button>
+  </Link>
 </div>
 
     {/* shahir ke sihayi end */}
@@ -254,6 +256,7 @@ function Home() {
     </p>
   </div>
   <div className="flex justify-center md:justify-end mt-4 md:mt-4">
+    
     <button className="bg-blue-600 text-white font-semibold py-1 px-1 rounded">
       AVAIL NOW
     </button>
