@@ -1,7 +1,46 @@
 import React from 'react'
 import img from '../FirstComponent/bg-1.jpg';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 function Home() {
+
+    const [showModal, setShowModal] = useState(false);
+    const [currentImage, setCurrentImage] = useState(0);
+  
+      const navigate = useNavigate();
+  
+    const handleButtonClick = () => {
+      navigate('/SignUp');
+    };
+  
+     // Sample image data for the slider
+    const galleryImages = [
+      './DSC_0004.png',
+      './DSC-1.png',
+      './DSC.png',
+    ];
+  
+    // Function to handle image click
+    const handleImageClick = (index) => {
+      setCurrentImage(index);
+      setShowModal(true);
+    };
+  
+    // Function to close the modal
+    const closeModal = () => {
+      setShowModal(false);
+    };
+  
+    // Function to handle next image
+    const nextImage = () => {
+      setCurrentImage((prev) => (prev + 1) % galleryImages.length);
+    };
+  
+    // Function to handle previous image
+    const prevImage = () => {
+      setCurrentImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+    };
+  
     return (
         <>
 
@@ -109,36 +148,51 @@ function Home() {
 
 {/* past event gallery start */}
 
-<div>
-  <div
-    style={{ backgroundImage: `url(${img})` }}
-    className="h-5/6 bg-cover bg-center"
-  >
-    <p className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white text-center pt-10">
-      Past Event Gallery
-    </p>
-    <p className="text-center text-gray-400 dark:text-gray-400 mt-5 font-medium">
-      Take a peek inside our Wonderworld
-    </p>
-    <div className="flex flex-wrap justify-center mt-5">
-      <img
-        className="h-70 w-100 md:h-50 md:w-96 m-2 cursor-pointer"
-        src="./DSC_0004.png"
-        alt="Event 1"
-      />
-      <img
-        className="h-70 w-100 md:h-50 md:w-96 m-2 cursor-pointer"
-        src="./DSC-1.png"
-        alt="Event 2"
-      />
-      <img
-        className="h-70 w-100 md:h-50 md:w-96 m-2 cursor-pointer"
-        src="./DSC.png"
-        alt="Event 3"
-      />
+<div classname="">
+    <div style={{ backgroundImage: `url(${img})` }} className="h-5/6  ">
+        <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white text-center pt-10">Past Event Gallery</h1>
+        <p class="text-center text-gray-500 dark:text-gray-400 mt-5">Take a peek inside our Wonderworld</p>
+        
+        <div className="flex overflow-x-auto space-x-5 justify-center mt-5">
+            {galleryImages.map((image, index) => (
+              <img
+                key={index}
+                className="h-auto w-1/3 mb-10 max-w-sm cursor-pointer hover:scale-105 transition-transform"
+                src={image}
+                alt={`Event ${index + 1}`}
+                onClick={() => handleImageClick(index)}
+              />
+            ))}
+          </div>
     </div>
-  </div>
 </div>
+{showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
+          <div className="relative w-full max-w-3xl mx-auto p-5">
+            <button
+              className="absolute top-0 right-0 text-white text-3xl p-2"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+
+            <div className="flex items-center justify-center space-x-5">
+              <button onClick={prevImage} className="text-white text-2xl">
+                &#9664;
+              </button>
+              <img
+                className="w-full max-h-96 object-contain"
+                src={galleryImages[currentImage]}
+                alt={`Slide ${currentImage + 1}`}
+              />
+              <button onClick={nextImage} className="text-white text-2xl">
+                &#9654;
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
 
 {/* past event gallery end */}
 
