@@ -31,7 +31,7 @@ function Contact() {
     
       try {
           // Make a POST request to your backend API
-          const response = await axios.post('http://192.168.1.4:5000/User', formData);
+          const response = await axios.post('http://192.168.1.71:5000/User', formData);
           console.log(response);
           if(response.status === 200){
              alert(response.data.message);
@@ -65,7 +65,7 @@ function Contact() {
             />
             {formErrors.name && <p className="text-red-500 text-xs italic">{formErrors.name}</p>}
             <br />
-          </div>
+          </div><br></br>
           <div className="mb-6">
             <label className="block text-gray-700 mb-2" htmlFor="email">Your Email (required)</label>
             <input 
