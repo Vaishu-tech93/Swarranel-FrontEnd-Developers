@@ -12,8 +12,12 @@ import SihayiSe from './FirstComponent/SihayiSe';
 import Footer from './FirstComponent/footer';
 import Abhang from './FirstComponent/Abhang';
 import Seats from './FirstComponent/Seats';
+import SignUp from './FirstComponent/SignUp';
+import Register from './FirstComponent/Register';
+import ForgotPassword from './FirstComponent/ForgotPassword';
 
 function App() {
+    
   return (
     <>   
          <BrowserRouter>
@@ -36,6 +40,13 @@ function App() {
       <Route path="/Abhang" element={<Abhang/>}/>
 
       <Route path="/Seats" element={<Seats/>}/>
+
+      <Route path="/SignUp" element={<SignUp/>}/>
+
+      <Route path="/Register" element={<Register/>}/>
+
+      <Route path="/ForgotPassword" element={<ForgotPassword/>} />
+      
 
       
     </Routes>
