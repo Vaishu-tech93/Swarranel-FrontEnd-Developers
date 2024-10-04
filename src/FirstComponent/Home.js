@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react';
 import img from '../FirstComponent/bg-1.jpg';
 import { Link } from 'react-router-dom';
+import Seats from '../FirstComponent/Seats';
 import { useNavigate } from 'react-router-dom';
+import SignUp from '../FirstComponent/SignUp';
+import Register from '../FirstComponent/Register';
+import ForgotPassword from '../FirstComponent/ForgotPassword';
+
 function Home() {
 
     const [showModal, setShowModal] = useState(false);
