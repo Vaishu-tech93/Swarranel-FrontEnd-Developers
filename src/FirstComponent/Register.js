@@ -156,7 +156,6 @@ const handleSubmit = async (e) => {
           <span
             onClick={toggleConfirmPasswordVisibility}
             className="absolute inset-y-0 right-3 top-9 cursor-pointer text-xl">
-            {confirmPasswordVisible ? <AiFillEyeInvisible /> : <AiFillEye />}
           </span>
           {passwordError && <p className="text-red-500 text-sm">{passwordError}</p>}
         </div>
