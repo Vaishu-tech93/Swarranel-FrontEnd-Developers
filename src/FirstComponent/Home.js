@@ -75,14 +75,13 @@ function Home() {
       alt="Sahir Ludhianvi"
     />
   </div>
-  <Link to="/Seats" >
   <button
-    type="button"
-    className="ml-60 text-white bg-pink-600 hover:bg-pink-800 focus:ring-4 focus:ring-pink-600 mt-5 md:m-20 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-pink-600 dark:hover:bg-pink-700 focus:outline-none dark:focus:ring-pink-800"
-  >
-    Book Now
-  </button>
-  </Link>
+      type="button"
+      onClick={handleButtonClick}
+      className="w-44 text-white bg-pink-700 hover:bg-pink-600 focus:outline-none focus:ring-4 focus:ring-pink-300 font-medium text-sm px-5 py-2.5 text-center mb-10 dark:bg-pink-600 dark:hover:bg-pink-500 dark:focus:ring-pink-700 mb-10 ml-20"
+    >
+      Pick your seat
+    </button>
 </div>
 
     {/* shahir ke sihayi end */}
