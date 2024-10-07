@@ -30,12 +30,12 @@ import { Link } from 'react-router-dom';
       </div>
     </div>
     
-    <button 
+    
+      <Link to="/Theatre"><button 
       type="button" 
       className="w-44 text-white bg-pink-700 hover:bg-pink-600 focus:outline-none focus:ring-4 focus:ring-pink-300 font-medium text-sm px-5 py-2.5 text-center mb-10 mt-6 ml-0 md:ml-20"
-    >
-      <Link to="/Seat">Pick your (seat)</Link>
-    </button>
+    >Pick your (seat) </button></Link>
+   
 
     <div style={{ backgroundImage: `URL(${img})` }} className='h-5/6 p-6'>
       <h1 className="text-4xl font-bold text-black-900 dark:text-white pt-10">About the Event</h1>
@@ -47,7 +47,7 @@ import { Link } from 'react-router-dom';
       <h1 className="text-center text-gray-500 dark:text-gray-400 m-20 mb-3 text-lg md:text-xl">Top Performers of the event</h1>
       
       <div className="flex flex-wrap justify-center">
-        {['Nilesh-Mate-Vocalist.png', 'Jitendra-Abhyankar.png', 'Swapnaja.png', 'Kalyani-Deshpande.png'].map((imgSrc, index) => (
+        {['Nilesh-Mate-Vocalist.png', 'Jitendra-Abhyankar.png','Swapnaja.png','Kalyani-Deshpande.png'].map((imgSrc, index) => (
           <div key={index} className="flex flex-col items-center mx-4 mb-10">
             <img src={`/${imgSrc}`} className="h-28 w-28" alt={`Vocalist ${index + 1}`} />
             <h5 className="pt-5 text-black-500 dark:text-black-400 text-4xl font-black">{['Nilesh Mate', 'Jitendra Abhyankar', 'Swapnaja Lele', 'Bhagyashree Abhyankar'][index]}</h5>
@@ -93,8 +93,6 @@ import { Link } from 'react-router-dom';
     </div>
   </div>
 </div>
-
-
     </>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 import img from '../FirstComponent/bg-1.jpg';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';

@@ -1,122 +1,68 @@
 import React, { useState } from 'react';
-import './Seats.css'
+import { FaChair } from 'react-icons/fa';
+import img from '../FirstComponent/Vertical-Banner.jpg';
 
-function Seats() {
-  const [selectedMovie, setSelectedMovie] = useState('');
+const seats = Array(60).fill(false); 
+
+const MovieSeatBooking = () => {
   const [selectedSeats, setSelectedSeats] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
 
-  const movies = [
-    { value: 10, label: 'Avengers: Endgame ($10)' },
-    { value: 12, label: 'Joker ($12)' },
-    { value: 8, label: 'Toy Story 4 ($8)' },
-    { value: 9, label: 'The Lion King ($9)' },
-  ];
-
-  const handleMovieChange = (event) => {
-    setSelectedMovie(event.target.value);
-  };
-
-  const handleSeatClick = (seat) => {
-    if (selectedSeats.includes(seat)) {
-      setSelectedSeats(selectedSeats.filter((s) => s !== seat));
+  const toggleSeat = (index) => {
+    if (selectedSeats.includes(index)) {
+      setSelectedSeats(selectedSeats.filter(seat => seat !== index));
     } else {
-      setSelectedSeats([...selectedSeats, seat]);
+      setSelectedSeats([...selectedSeats, index]);
     }
   };
 
-  const calculateTotalPrice = () => {
-    const price = movies.find((movie) => movie.value === selectedMovie).value;
-    setTotalPrice(price * selectedSeats.length);
-  };
+  const calculateTotal = () => selectedSeats.length * 20; // Assuming each seat costs $10
 
   return (
-    <div className="container mx-auto p-4 mt-20">
-      <h2 className="text-lg font-bold mb-4">Movie Seat Booking</h2>
-      <div className="movie-container mb-4">
-        <label>Pick a movie:</label>
-        <select
-          value={selectedMovie}
-          onChange={handleMovieChange}
-          className="block w-full p-2 pl-10 text-sm text-gray-700"
-        >
-          {movies.map((movie) => (
-            <option key={movie.value} value={movie.value}>
-              {movie.label}
-            </option>
-          ))}
-        </select>
-
-
-        <img src="/swarraneel.png" className="h-24 w-30 ml-" alt="Logo" />
-
+  
+     <div className="max-w-2xl mx-auto p-6">
+      {/* Movie Card */}
+      <div className="bg-gray-800 text-white p-4 rounded-md mb-6 mt-28 flex">
+        <img 
+          src={img} 
+          alt="Movie Poster" 
+          className="w-24 h-36 rounded-md mr-4"
+        />
+        <div>
+          <h2 className="text-lg font-bold">Shahir Ke Sihayi Se</h2>
+          <p className="text-sm">Vocals: Nilesh Mate, Jitendra Abhyankar, Swapnaja Lele, Bhagyashree Abhyankar.</p>
+          <p className="text-sm">Date: SUNDAY, 25TH FEB | Time – 06:00 PM | Ticket rate – Rs 300 & 200</p>
+          <p className="text-sm">Duration: 120 mins</p>
+        </div>
       </div>
-      <ul className="showcase flex mb-4">
-        <li className="mr-4">
-          <div className="seat bg-gray-400"></div>
-          <small>N/A</small>
-        </li>
-        <li className="mr-4">
-          <div className="seat bg-green-500"></div>
-          <small>Selected</small>
-        </li>
-        <li>
-          <div className="seat bg-red-500"></div>
-          <small>Occupied</small>
-        </li>
-      </ul>
-      <div className="flex">
-      <div className="container mb-4">
-        <div className="screen bg-gray-400 mb-4"></div>
-        {Array.from({ length: 12 }, (_, i) => (
-          <div key={i} className="row flex mb-2">
-            {Array.from({ length: 6 }, (_, j) => (
-              <div
-                key={j}
-                className={`seat ${selectedSeats.includes(`${i}-${j}`) ? 'bg-green-500' : 'bg-gray-400'}`}
-                onClick={() => handleSeatClick(`${i}-${j}`)}
-              ></div>
-            ))}
+
+      {/* Seats Layout */}
+      <div className="grid grid-cols-5 gap-4 mb-4">
+        {seats.map((isBooked, index) => (
+          <div
+            key={index}
+            onClick={() => toggleSeat(index)}
+            className={`flex justify-center items-center cursor-pointer ${isBooked ? 'text-gray-400' : selectedSeats.includes(index) ? 'text-green-500' : 'text-gray-700'}`}
+          >
+            <FaChair className="text-3xl" />
           </div>
         ))}
       </div>
-      <div className="container mb-4">
-        <div className="screen bg-gray-400 mb-4"></div>
-        {Array.from({ length: 15 }, (_, i) => (
-          <div key={i} className="row flex mb-2">
-            {Array.from({ length: 12 }, (_, j) => (
-              <div
-                key={j}
-                className={`seat ${selectedSeats.includes(`${i}-${j}`) ? 'bg-green-500' : 'bg-gray-400'}`}
-                onClick={() => handleSeatClick(`${i}-${j}`)}
-              ></div>
-            ))}
-          </div>
-        ))}
+ {/* Booking Summary */}
+ <div className="mt-4">
+        <h3 className="text-lg font-bold">Selected Seats:</h3>
+        <p className="text-gray-600">{selectedSeats.length === 0 ? "No seats selected" : selectedSeats.join(", ")}</p>
+        <h4 className="text-lg font-bold mt-2">Total: ${calculateTotal()}</h4>
       </div>
-      <div className="container mb-4">
-        <div className="screen bg-gray-400 mb-4"></div>
-        {Array.from({ length: 12 }, (_, i) => (
-          <div key={i} className="row flex mb-2">
-            {Array.from({ length: 6 }, (_, j) => (
-              <div
-                key={j}
-                className={`seat ${selectedSeats.includes(`${i}-${j}`) ? 'bg-green-500' : 'bg-gray-400'}`}
-                onClick={() => handleSeatClick(`${i}-${j}`)}
-              ></div>
-            ))}
-          </div>
-        ))}
-      </div>
-      </div>
-     <button className="bg-pink-600 ml-96 rounded-full">
-     <p className="text-lg font-bold mb-4 text-white p-2">
-        You have selected <span className="text-white">{selectedSeats.length}</span> seats for a price of{' '}
-        <span className="text-white">${totalPrice}</span>
-      </p>
-     </button>
+
+    {/* Button to Confirm Booking */}
+      <button
+        onClick={() => alert(`Selected Seats: ${selectedSeats.length === 0 ? "No seats selected" : selectedSeats.join(", ")}\nTotal: $${calculateTotal()}`)}
+        className="mt-4 bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700"
+      >
+        Confirm Booking
+      </button>
     </div>
   );
-}
+};
 
-export default Seats;
+export default MovieSeatBooking;
